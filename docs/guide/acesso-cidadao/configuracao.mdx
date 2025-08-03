@@ -1,0 +1,62 @@
+# Integração com Acesso Cidadão
+
+Esta seção explica como iniciar a configuração da integração com o **Acesso Cidadão**, o sistema de autenticação oficial utilizado em ambientes governamentais e institucionais.
+
+:::warning
+Você precisará de permissões de administrador para concluir estas etapas. Caso não possua, solicite auxílio ao setor responsável pela administração da plataforma.
+:::
+
+## 1. Acessando o painel de administração
+
+1. Acesse o portal do [Acesso Cidadão](https://acessocidadao.es.gov.br/).
+2. Faça login com uma **conta administrativa**.
+3. No menu principal, vá até a seção **"Sistemas"**.
+4. Clique em **OnBaseDetranEs**
+
+![Painel de administração do Acesso Cidadão](/ac.png)
+
+## 2. Criar um novo cliente OAuth2
+
+1. Na barra de navegação à esquerda clique em Clientes OAuth2
+
+2 .Clique em **"Adicionar"** para registrar a nova API como um cliente OAuth2.
+
+Você precisará preencher:
+
+- **Fluxo**: SEMPRE Hybrid.
+- **Descrição**: Nome da aplicação "[Sigla]" - "[Nome da Solução]" .
+
+3. Definir os escopos (Scopes)
+   No campo de escopos, informe os dados que sua aplicação precisa acessar. Exemplos comuns:
+
+- openid
+- email
+- profile
+- cpf
+- phone
+
+Esses escopos devem estar de acordo com a necessidade real da aplicação, respeitando a LGPD.
+
+:::tip{title="Dica"}
+Solicite apenas os escopos realmente necessários para garantir a privacidade do usuário.
+:::
+
+4. Salvar e obter as credenciais
+   Após preencher o formulário, clique em Salvar.
+
+Você receberá:
+
+Client ID
+
+Client Secret
+
+Essas credenciais serão usadas no backend da sua aplicação para iniciar o fluxo de autenticação OAuth2.
+
+💡 Guarde o Client Secret em local seguro, como variáveis de ambiente no servidor ou .env local.
+
+5. Testar a integração
+   Com as URLs e credenciais configuradas, você pode testar a autenticação a partir do seu sistema. Ao clicar em "Login com Acesso Cidadão", o usuário será redirecionado para a tela de login oficial, e após a autenticação, será redirecionado de volta para sua aplicação.
+
+```
+
+```

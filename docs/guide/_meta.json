@@ -1,1 +1,9 @@
-["index"]
+[
+  {
+    "type": "dir",
+    "name": "acesso-cidadao",
+    "label": "Acesso Cidadão",
+    "collapsible": true,
+    "collapsed": false
+  }
+]
